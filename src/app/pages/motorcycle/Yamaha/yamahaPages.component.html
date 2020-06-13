@@ -1,0 +1,55 @@
+<div id="YamahaPage" class='card' style="text-align:center" class="container">
+    <div class="card-header">
+    </div>
+        <p>&nbsp;</p>
+        <h1>Yamaha</h1>
+        <p>&nbsp;</p>
+</div>
+<div class="card-body" class="container">
+    <div class='row'>  
+        <div class='col-md-4'>Filter by:</div>
+    </div>
+    
+    <div class='col-md-6'>
+        <div class='row'>
+            <input type="text"            
+                [(ngModel)]= 'descriptionFilter'/>
+        </div>   
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div class="table-responsive">
+        <table class='table' *ngIf='motors && motors.length' >
+            <thead >
+                <tr>
+                    <th style="text-align:left"></th>
+                    <th style="text-align:center">Description</th>
+                    <th style="text-align:center">Model</th>
+                    <th style="text-align:center">Year</th>
+                    <th style="text-align:center">Price</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor= 'let motor of filteredProducts'>
+                    <td style="text-align:left">       
+                        <img src={{motor.picture}} width="140" height="100" id="{{motor.model}}" routerLink="/{{motor.model}}" routerLinkActive="active" class="waves-effect waves-light btn">
+                    </td>
+                    
+                    <td style="text-align:center" routerLink="/{{motor.model}}" routerLinkActive="active" class="waves-effect waves-light btn">
+                        <p>&nbsp;</p>
+                        {{motor.description}}</td>
+                    <td style="text-align:center">
+                        <p>&nbsp;</p>
+                        {{motor.model}}</td>
+                    <td style="text-align:center">
+                        <p>&nbsp;</p>
+                        {{motor.year}}</td>
+                    <td style="text-align:center">
+                        <p>&nbsp;</p>
+                        {{motor.price}}</td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

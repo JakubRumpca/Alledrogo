@@ -1,0 +1,56 @@
+<div id="BmwPage" class='card' style="text-align:center">
+    <div class="card-header">
+    </div>
+        <p>&nbsp;</p>
+        <h1>BMW</h1>
+        <p>&nbsp;</p>
+</div>
+
+<div class="card-body" class="container">
+    <div class='row'>  
+        <div class='col-md-4'>Filter by:</div>
+    </div>
+    
+    <div class='col-md-6'>
+        <div class='row'>
+            <input type="text"            
+                [(ngModel)]= 'descriptionFilter'/>
+        </div>   
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div class="table-responsive">
+        <table class='table' *ngIf='cars && cars.length' >
+            <thead >
+                <tr>
+                    <th style="text-align:left"></th>
+                    <th style="text-align:center">Description</th>
+                    <th style="text-align:center">Model</th>
+                    <th style="text-align:center">Year</th>
+                    <th style="text-align:center">Price</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor= 'let car of filteredProducts'>
+                    <td style="text-align:left">       
+                        <img src={{car.picture}} width="140" height="100" id="{{car.model}}" routerLink="/{{car.model}}" routerLinkActive="active" class="waves-effect waves-light btn">
+                    </td>
+                    
+                    <td style="text-align:center" routerLink="/{{car.model}}" routerLinkActive="active" class="waves-effect waves-light btn">
+                        <p>&nbsp;</p>
+                        {{car.description}}</td>
+                    <td style="text-align:center">
+                        <p>&nbsp;</p>
+                        {{car.model}}</td>
+                    <td style="text-align:center">
+                        <p>&nbsp;</p>
+                        {{car.year}}</td>
+                    <td style="text-align:center">
+                        <p>&nbsp;</p>
+                        {{car.price}}</td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
