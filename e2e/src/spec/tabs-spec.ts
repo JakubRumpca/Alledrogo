@@ -16,19 +16,16 @@ describe('Switch pages - Test:', () => {
   
   it('Should go to Login page', async () => {
     await page.goToTab("Login");
-    await browser.sleep(3000);
     expect(await page.elementIsPresentInTable({element: "Sign In"})).toBe(true);
   });
   
   it('Should go to Cars page', async () => {
     await page.goToTab("Cars", "Volvo");
-    await browser.sleep(3000);
     expect(await page.elementIsPresentInTable({element: "XC90"})).toBe(true);
   });
   
   it('Should go to Motorcycles page', async () => {
     await page.goToTab("Motorcycles", "HarleyDavidson");
-    await browser.sleep(3000);
     expect(await page.elementIsPresentInTable({element: "Harley Davidson"})).toBe(true);
   });
 });
