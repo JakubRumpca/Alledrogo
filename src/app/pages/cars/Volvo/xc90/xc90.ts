@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'xc90-pages',
-    templateUrl: './XC90.component.html'
+    templateUrl: './xc90.component.html'
     
 })
 
