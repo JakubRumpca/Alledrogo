@@ -22,8 +22,6 @@ jobs:
       
       - run: echo "Your repository has been copied to the path ${{ github.workspace }} on the runner."
       
-      - run: echo "The workflow is now ready to test your code on the runner."
-      
       - name: conditional step when event name is pull request
         if: ${{ github.event_name == 'pull_request' }}
         run: echo "This event is a pull request"
